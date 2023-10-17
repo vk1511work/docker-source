@@ -1,0 +1,11 @@
+version: "3"
+services:
+  php-unit:
+    build:
+      context: .
+    ports:
+      - "8080:80"
+    privileged: true
+    volumes:
+      - ../app:/opt/devel/app
+    command: "/usr/sbin/httpd -DFOREGROUND"
